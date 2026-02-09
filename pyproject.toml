@@ -1,0 +1,25 @@
+[project]
+name = "using-mlflow"
+version = "0.1.0"
+description = "Aqui vamos usar MLflow para tracking de nossos Dados, Modelos, Prompts, etc"
+readme = "README.md"
+authors = [
+    { name = "EddyGiusepe", email = "eddychirinos.unac@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "datasets>=4.3.0",
+    "gepa>=0.0.17",
+    "langchain-google-genai>=3.0.0",
+    "litellm>=1.78.7",
+    "mlflow>=3.5.1",
+    "pandas>=2.3.3",
+]
+
+[dependency-groups]
+dev = [
+    "black>=26.1.0",
+]
+
+[tool.ruff]
+extend = "ruff.toml"
