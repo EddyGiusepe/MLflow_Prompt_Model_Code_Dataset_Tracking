@@ -13,8 +13,15 @@ MLflow serve para gerenciar todo o ciclo de vida de modelos de Machine Learning 
 
 
 
+Links de estudo:
 
+* [MLflow: Documentação](https://mlflow.org/docs/latest/)
 
+* [MLflow: Tracing Quickstart](https://mlflow.org/docs/latest/genai/tracing/quickstart/)
+
+* [YouTube: Getting Started with MLflow: MLflow Dataset Tracking](https://www.youtube.com/watch?v=BoTbLWWV-wA)
+
+* [GitHub: MLflow](https://github.com/srinathmkce/TheAIGuy/tree/main/NLP/mlflow_examples)
 
 
 
