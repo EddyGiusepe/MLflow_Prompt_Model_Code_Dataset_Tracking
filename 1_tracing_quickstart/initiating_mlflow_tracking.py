@@ -10,7 +10,7 @@ linha de comando.
 
 RUN
 ---
-uvx mlflow server --host 0.0.0.0 --allowed-hosts "*"
+uvx mlflow server --host 0.0.0.0 --cors-allowed-origins "*"
 
 Depois, acesse usando o IP do WSL2: http://172.31.94.105:5000
 
