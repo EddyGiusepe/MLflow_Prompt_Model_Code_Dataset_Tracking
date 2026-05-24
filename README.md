@@ -12,6 +12,15 @@ MLflow serve para gerenciar todo o ciclo de vida de modelos de Machine Learning 
 ![](https://mlflow.org/assets/images/exploring_metrics_in_mlflow_ui-f99a9114e858c72141603e71b81a94ad.png)
 
 
+
+
+
+
+
+
+
+
+
 Links de estudo:
 
 * [MLflow: Documentação](https://mlflow.org/docs/latest/)
