@@ -218,10 +218,11 @@ def build_crew(llm: BaseLLM) -> Crew:
     )
 
     macro_data = Agent(
-        role="Macro Data Specialist",
-        goal=(
-            "Fetch one authoritative CPI inflation series from the World Bank "
-            "public API and summarize it so downstream analysts can cite it."
+        role="Especialista em Macrodados",
+        goal=dedent(
+            """Obtenha uma série histórica oficial da inflação medida pelo Índice de
+               Preços ao Consumidor (IPC) na API pública do Banco Mundial e resuma-a
+               para que analistas posteriores possam citá-la."""
         ),
         backstory=(
             "You only use the fetch_world_bank_inflation tool (World Bank JSON "
