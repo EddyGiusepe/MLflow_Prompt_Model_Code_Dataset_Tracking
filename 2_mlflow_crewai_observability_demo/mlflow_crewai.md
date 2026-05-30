@@ -6,26 +6,26 @@ Uma equipe multi-agente da [CrewAI](https://www.crewai.com/) que analisa a **pre
 
 ## <font color="red">O que ele faz</font>
 
-Four AI agents run in sequence, each with a distinct role:
+Quatro agentes de IA executam-se em sequência, cada um com um papel distinto:
 
 | # | Agent | Responsibility | MLflow visibility |
 |---|-------|----------------|-------------------|
-| 1 | **Orchestration Lead** | Scopes the engagement charter | Agent span |
-| 2 | **Macro Data Specialist** | Fetches World Bank CPI inflation | Agent → Tool → `world_bank_stats_api` nested span |
-| 3 | **Research Analyst** | Writes a structured research brief | Agent span |
-| 4 | **Portfolio Synthesist** | Produces the investment-style synthesis | Agent → Tool → `numeric_report_validation` nested span |
+| 1 | **Orchestration Lead** | Escopo do plano de engajamento | Agent span |
+| 2 | **Macro Data Specialist** | Busca a inflação do CPI no World Bank | Agent → Tool → `world_bank_stats_api` nested span |
+| 3 | **Research Analyst** | Escreve um breve de pesquisa estruturado | Agent span |
+| 4 | **Portfolio Synthesist** | Produz a síntese de investimento | Agent → Tool → `numeric_report_validation` nested span |
 
 ```text
-Crew.kickoff (root span — summary attributes here)
-├── Task 1 → Orchestration Lead
-├── Task 2 → Macro Data Specialist
-│   └── world_bank_stats_api          ← @mlflow.trace (HTTP metrics)
-├── Task 3 → Research Analyst
-└── Task 4 → Portfolio Synthesist
-    └── numeric_report_validation     ← @mlflow.trace (validation metrics)
+Crew.kickoff (root span — atributos resumidos aqui)
+├── Task 1 → Líder de Orquestração
+├── Task 2 → Especialista de Dados Macroeconômicos
+│   └── world_bank_stats_api          ← @mlflow.trace (métricas HTTP)
+├── Task 3 → Analista de Pesquisa
+└── Task 4 → Síntese de Portfólio
+    └── numeric_report_validation     ← @mlflow.trace (métricas de validação)
 ```
 
-## Observability features
+## <font color="red">Features de Observabilidade</font>
 
 - **`mlflow.crewai.autolog()`** — traces crew, task, and agent execution.
 - **`mlflow.openai.autolog()`** — traces every OpenAI LLM call with token counts (`prompt_tokens`, `completion_tokens`, `total_tokens`).
