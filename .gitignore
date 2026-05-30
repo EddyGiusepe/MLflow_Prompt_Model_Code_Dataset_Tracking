@@ -209,3 +209,4 @@ __marimo__/
 
 # EddyGiusepe:
 mlflow.db
+crew_state.db
