@@ -239,21 +239,21 @@ def build_crew(llm: BaseLLM) -> Crew:
     )
 
     researcher = Agent(
-        role="Household Economics & Consumer Finance Research Analyst",
-        goal=(
-            "Produce a structured research brief on how macro conditions "
-            "(inflation, policy rates, labor markets, housing markets) transmit "
-            "to typical family budgets: shelter, essentials, debt service, and "
-            "savings buffers—using cross-country patterns, not a single market's "
-            "rulebook."
+        role="Analista de Pesquisa em Economia Doméstica e Finanças do Consumidor",
+        goal=dedent(
+            """Elabore um relatório de pesquisa estruturado sobre como as condições
+               macroeconômicas (inflação, taxas de juros, mercados de trabalho, mercados
+               imobiliários) se refletem nos orçamentos familiares típicos: moradia, itens
+               essenciais, serviço da dívida e reservas de poupança — utilizando padrões
+               internacionais, e não as regras de um único mercado."""
         ),
-        backstory=(
-            "You translate macro and household-finance research for "
-            "non-specialists.  You name mechanisms (e.g., floating vs fixed "
-            "debt, rent pass-through, real wage growth), note where data is "
-            "country-specific, and separate established relationships from open "
-            "debates.  The Macro Data task already fetched World Bank CPI "
-            "inflation—integrate and cite that block from your task context."
+        backstory=dedent(
+            """Você traduz pesquisas macroeconômicas e de finanças pessoais para não
+               especialistas. Você nomeia mecanismos (por exemplo, dívida flutuante versus
+               fixa, repasse de aluguéis, crescimento real dos salários), indica onde os
+               dados são específicos de cada país e separa relações estabelecidas de debates
+               em aberto. A tarefa de Dados Macroeconômicos já obteve a inflação do IPC do
+               Banco Mundial — integre e cite esse bloco do contexto da sua tarefa."""
         ),
         verbose=True,
         allow_delegation=False,
