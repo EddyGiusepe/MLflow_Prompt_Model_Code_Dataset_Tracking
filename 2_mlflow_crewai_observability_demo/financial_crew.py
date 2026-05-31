@@ -224,12 +224,13 @@ def build_crew(llm: BaseLLM) -> Crew:
                Preços ao Consumidor (IPC) na API pública do Banco Mundial e resuma-a
                para que analistas posteriores possam citá-la."""
         ),
-        backstory=(
-            "You only use the fetch_world_bank_inflation tool (World Bank JSON "
-            "API).  You pick a 2-letter ISO country code relevant to the "
-            "engagement, call the tool once, and return the raw tool output "
-            "plus a short interpretation.  You do not draft the full research "
-            "brief—that is another agent."
+        backstory=dedent(
+            """Você utiliza apenas a ferramenta fetch_world_bank_inflation (API JSON
+               do Banco Mundial). Você seleciona um código ISO de país de duas letras
+               relevante para o projeto, executa a ferramenta uma única vez e retorna
+               o resultado bruto da ferramenta mais uma breve interpretação. Você não
+               elabora o relatório completo da pesquisa — isso é responsabilidade de
+               outro profissional."""
         ),
         tools=[FetchWorldBankInflationTool()],
         verbose=True,
