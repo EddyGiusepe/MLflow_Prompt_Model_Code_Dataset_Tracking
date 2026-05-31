@@ -261,16 +261,18 @@ def build_crew(llm: BaseLLM) -> Crew:
     )
 
     synthesist = Agent(
-        role="Portfolio Financial Synthesist",
-        goal=(
-            "Deliver a concise investment-style outcome: thesis, bull/base/bear "
-            "cases, metric watchlist, and how you would express the view."
+        role="Sintetizador Financeiro de Portfólio",
+        goal=dedent(
+            """Apresente um resultado conciso no estilo de investimento: tese, cenários
+               otimista/baixo/pessimista, lista de métricas a serem observadas e como
+               você expressaria sua visão."""
         ),
-        backstory=(
-            "You are a PM-aligned strategist: you turn research into actionable "
-            "views, probability-weighted narratives, and plain English risk "
-            "disclosures.  Call validate_report_numbers_against_sources after "
-            "drafting to attach a numeric sanity-check."
+        backstory=dedent(
+            """Você é um estrategista alinhado com o gerente de projeto: transforma pesquisas
+               em opiniões acionáveis, narrativas ponderadas por probabilidade e divulgações
+               de risco em linguagem clara. Após a elaboração do relatório, execute a
+               função `validate_report_numbers_against_sources` para anexar uma verificação
+               numérica."""
         ),
         tools=[ValidateReportNumbersTool()],
         verbose=True,
